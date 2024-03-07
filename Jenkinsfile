@@ -4,7 +4,6 @@ pipeline {
         jdk 'java17'
         maven 'Maven1'
     }
-    def pomfilepath= /home/ubuntu
     stages{
         stage("Cleanup Workspace"){
                 steps {
