@@ -15,6 +15,9 @@ pipeline {
                 git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/Shivaraj-sagumale/Jenkins'
                 }
         }
+        dir("/../.."){
+        mvn clean test
+        }
         stage("Build Application"){
             steps {
                 sh "mvn clean package"
