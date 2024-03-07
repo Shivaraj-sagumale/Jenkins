@@ -4,6 +4,7 @@ pipeline {
         jdk 'java17'
         maven 'Maven1'
     }
+    def pomfilepath= /home/ubuntu
     stages{
         stage("Cleanup Workspace"){
                 steps {
@@ -14,9 +15,6 @@ pipeline {
                 steps {
                 git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/Shivaraj-sagumale/Jenkins'
                 }
-        }
-        dir("/../.."){
-        mvn clean test
         }
         stage("Build Application"){
             steps {
