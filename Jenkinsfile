@@ -1,8 +1,8 @@
 pipeline {
     agent { label 'Jenkins-Agent01' }
-    agent { label 'jenkins-Agent02' }
+#    agent { label 'jenkins-Agent02' }
     tools {
-        jdk 'Java17'
+        jdk 'java17'
         maven 'Maven1'
     }
     stages{
@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Checkout from SCM"){
                 steps {
-                git branch: 'main', credentilalsId: 'GitHub', url: 'https://github.com/Shivaraj-sagumale/Jenkins'
+                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/Shivaraj-sagumale/Jenkins'
                 }
         }
         stage("Build Application"){
