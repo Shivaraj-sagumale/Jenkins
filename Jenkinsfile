@@ -10,14 +10,12 @@ pipeline {
                 steps {
                 cleanWs()
                 }
-        {
-
+        }
         stage("Checkout from SCM"){
                 steps {
                 git branch: 'main', credentilalsId: 'GitHub', url: 'https://github.com/Shivaraj-sagumale/Jenkins'
                 }
         }
-   
         stage("Build Application"){
             steps {
                 sh "mvn clean package"
@@ -29,4 +27,6 @@ pipeline {
                   sh "mvn test"
             }
         }
+        
     }
+}
