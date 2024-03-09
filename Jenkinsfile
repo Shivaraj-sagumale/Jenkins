@@ -5,7 +5,7 @@ pipeline {
         maven 'Maven1'
     }
     environment {
-            APP_NAME = "app-pipeline"
+            APP_NAME = "Jenkins-pipeline"
             RELEASE = "1.0.0"
             DOCKER_USER = "shivaraj1996"
             DOCKER_PASS = "dockerhub"
